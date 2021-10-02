@@ -1,7 +1,9 @@
 //Open Weather Maps API Key
-var myAPIkey = "296ed1d5b0b1577dafb10b0d00164d10";
-var lastCity = "";
 var currentCity = "";
+var lastCity = "";
+var myAPIkey = "296ed1d5b0b1577dafb10b0d00164d10";
+
+
 
 
 var handleErrors = (response) => {
@@ -11,7 +13,7 @@ var handleErrors = (response) => {
     return response;
 }
 
-var getCurrentConditions = (event) => {
+var getCurrentForecast = (event) => {
     // Obtain city name from the search box
     let city = $('#citySearch').val();
     currentCity= $('#citySearch').val();
@@ -32,7 +34,7 @@ var getCurrentConditions = (event) => {
         let currentTimeZoneOffsetHours = currentTimeZoneOffset / 60 / 60;
         let currentMoment = moment.unix(currentTimeUTC).utc().utcOffset(currentTimeZoneOffsetHours);
       
-        renderCities();
+        showCity();
        
         getFiveDayForecast(event);
         // Change header to name of searched city
@@ -43,32 +45,12 @@ var getCurrentConditions = (event) => {
                 <li>Temperature: ${response.main.temp}&#8457;</li>
                 <li>Humidity: ${response.main.humidity}%</li>
                 <li>Wind Speed: ${response.wind.speed} mph</li>
-                <li id="uvIndex">UV Index:</li>
+                
 
             </ul>`;
         // Append the results to the DOM
         $('#forecastCurrent').html(currentWeatherHTML);
-        // Not sure this is working, no UV info is showing up, either broken or there is no uv index today?!
-        let latitude = response.coord.lat;
-        let longitude = response.coord.lon;
-        let uvQueryURL = "api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&APPID=" + myAPIkey;
-        uvQueryURL = "https://cors-anywhere.herokuapp.com/" + uvQueryURL;
-        fetch(uvQueryURL)
-        .then(handleErrors)
-        .then((response) => {
-            return response.json();
-        })
-        .then((response) => {
-            let uvIndex = response.value;
-            $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}</span>`);
-            if (uvIndex>=0 && uvIndex<3){
-                $('#uvVal').attr("class", "uv-good");
-            } else if (uvIndex>=3 && uvIndex<8){
-                $('#uvVal').attr("class", "uv-ok");
-            } else if (uvIndex>=8){
-                $('#uvVal').attr("class", "uv-bad");
-            }
-        });
+      
     })
 }
 
@@ -131,7 +113,7 @@ var saveCity = (newCity) => {
 }
 
 
-var renderCities = () => {
+var showCity = () => {
     $('#city-results').empty();
 
         
@@ -162,7 +144,7 @@ var renderCities = () => {
 $('#search-button').on("click", (event) => {
 event.preventDefault();
 currentCity = $('#citySearch').val();
-getCurrentConditions(event);
+getCurrentForecast(event);
 });
 
 
@@ -170,17 +152,17 @@ $('#city-results').on("click", (event) => {
     event.preventDefault();
     $('#citySearch').val(event.target.textContent);
     currentCity=$('#citySearch').val();
-    getCurrentConditions(event);
+    getCurrentForecast(event);
 });
 
 // Clear localStorage
 $("#clearStorage").on("click", (event) => {
     localStorage.clear();
-    renderCities();
+    showCity();
 });
 
 
-renderCities();
+showCity();
 
 
-getCurrentConditions();
+getCurrentForecast();
