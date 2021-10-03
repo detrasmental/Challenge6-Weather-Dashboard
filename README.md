@@ -31,9 +31,18 @@ The following image shows the web application's appearance and functionality:
 ![image](https://user-images.githubusercontent.com/85942489/135724141-274b7451-4196-476f-b399-0356a09e7409.png)
 
 
+## Deployed Application
+https://detrasmental.github.io/Challenge6-Weather-Dashboard/
+
+## Screenshot of Application
+![appscreensjot](https://user-images.githubusercontent.com/85942489/135769581-2fdbd3c4-262a-4fce-93e5-849fa3353e32.JPG)
+
 
 ## Built With
 HTML  
 CSS  
 JS  
 OpenWeather Api  
+
+### Credits & Resources
+I struggled quite a bit with this challenege, getting the UV index to display properly was especially difficult for me. Multiple YouTubers with tutorials on pulling API's and building weather applications helped tremendously. W3schools.com was also a game changer. 
