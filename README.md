@@ -45,4 +45,4 @@ JS
 OpenWeather Api  
 
 ### Credits & Resources
-I struggled quite a bit with this challenege, getting the UV index to display properly was especially difficult for me. Multiple YouTubers with tutorials on pulling API's and building weather applications helped tremendously. W3schools.com was also a game changer. 
+I struggled quite a bit with this challenge, getting the UV index to display properly was especially difficult for me. Multiple YouTubers with tutorials on pulling API's and building weather applications helped tremendously. W3schools.com was also a game changer. 
