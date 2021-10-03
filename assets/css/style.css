@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0;
+}
 
 #header{
-    background-position-y: 40%;
     color: snow;
     background: rgb(34,193,195);
     background: -moz-linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(131,45,253,0.7682423311121324) 100%);
@@ -13,68 +16,76 @@
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-
 #header h1{
     font-size: 60px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    font-weight: bold;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    
+}
+
+.search-column{
+    background-color:rgb(34,193,195);
+    width: 80%;
+    border: 1px solid black;
+}
+
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+    border-radius: 50%;
 }
 
 
+.card-body, .card-header{
+    flex: auto;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(34,193,195);
+    bottom: 10px;
+   }
 
-.jumbotron {
-    padding: 1rem;
-    border-radius: 0;
+
+.img {
+    font-size: 10px;
+}
+
+#row {
+    border-radius: 50%;
 }
 
 
-#citySearch{
-    width:80%;
-}
-
-
-#search-button-icon{
-    width:15px;
-    display:inline-block;
-}
-
-
-#forecastCurrent {
-    padding-left: 15px;
-}
-
-
-#clearStorage{
-    color:snow;
-    text-decoration: none;
-    font-size:.75em;
-    margin: .5em 0em 0em .5em;
-}
-
-
-
-.weather-card{
-    width: 9rem;
-    background: rgb(34,64,195);
-    background: -moz-linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    background: -webkit-linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    background: linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2240c3",endColorstr="#832dfd",GradientType=1);
-    color: snow;
+.col-12 {
     text-align: center;
-    font-weight: 900;
+    font-size: larger;
+}
 
+span.extreme{
+    padding: 3px;
+    background-color: rgb(102, 6, 97);
+    color:white;
+}
+
+span.danger{
+    padding: 3px;
+    background-color: rgb(209, 9, 9);
+    color:white;
+}
+span.high{
+    padding: 3px;
+    background-color: rgb(185, 91, 14);
+    color:white;
+}
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.low{
+    padding: 3px;
+    background-color: green;
+    color:white;
 }
 footer {
     position: fixed;
@@ -85,17 +96,9 @@ footer {
     background-size: cover;
     color: snow;
     text-align: center;
- }
 
- button {
-    background: rgb(34,64,195);
-    background: -moz-linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    background: -webkit-linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    background: linear-gradient(0deg, rgba(34,64,195,1) 3%, rgba(131,45,253,0.24723392775078779) 66%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2240c3",endColorstr="#832dfd",GradientType=1);
  }
-
-/* Media queries */
+ /* Media queries */
 @media only screen and (max-width: 992px) {
     #citySearch{
         width:100%;
