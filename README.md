@@ -6,10 +6,8 @@ Use the OpenWeather One Call API to retrieve weather data for cities.
 
 ## User Story
 
-AS A traveler
-
-I WANT to see the weather outlook for multiple cities
-
+AS A traveler  
+I WANT to see the weather outlook for multiple cities  
 SO THAT I can plan a trip accordingly
 
 ## Acceptance Criteria
