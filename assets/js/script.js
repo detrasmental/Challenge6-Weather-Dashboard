@@ -162,23 +162,20 @@ var openWeatherIcons = document.createElement("img")
        openWeatherIcons.classList = "card-body text-center";
        openWeatherIcons.setAttribute("src",`https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
        forecastEl.appendChild(openWeatherIcons);
-       
-
-
-
-    
        forecastEl.appendChild(forecastTempEl);
 
 //humidity for cards
 var forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
        forecastHumEl.textContent = "Humidity: " + dailyForecast.main.humidity + "%";
-
-       
        forecastEl.appendChild(forecastHumEl);
 
-       
-       forecastContainerEl.appendChild(forecastEl);
+var forecastWindSpeedEl = document.createElement("span");
+    forecastWindSpeedEl.classList = "card-body text-center";
+    forecastWindSpeedEl.textContent = "Wind: " + dailyForecast.wind.speed + " MPH";
+    forecastEl.appendChild(forecastWindSpeedEl);
+
+forecastContainerEl.appendChild(forecastEl);
     }
 
 }
